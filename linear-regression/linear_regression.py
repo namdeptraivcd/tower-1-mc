@@ -40,3 +40,12 @@ plt.xlabel('Height (cm)')
 plt.ylabel('weight (kg)')
 plt.savefig('output.png')
 
+# check hệ số thu được 
+print('w', w)
+
+# dùng model của sklearn
+from sklearn import datasets, linear_model
+model = linear_model.LinearRegression(fit_intercept= False)
+model.fit(X,y)
+print('sklearn w", model.coef_)')
+
