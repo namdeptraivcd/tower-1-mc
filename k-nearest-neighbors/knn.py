@@ -26,7 +26,7 @@ def dis_ps_naive(z, X):
 def dis_pp_fast(z, X):
     X2 = np.sum(X*X, axis = 1)
     z2 = np.sum(z*z)
-    res_2 = X2 + z2 - 2*np.dot(X.T, z) # có thể bỏ cả z2
+    res_2 = X2 + z2 - 2*np.dot(X, z) # có thể bỏ cả z2
     return res_2 
 
 t1 = time()
