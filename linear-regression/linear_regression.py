@@ -47,5 +47,5 @@ print('w', w)
 from sklearn import datasets, linear_model
 model = linear_model.LinearRegression(fit_intercept= False)
 model.fit(X,y)
-print('sklearn w", model.coef_)')
+print('sklearn w', model.coef_)
 
