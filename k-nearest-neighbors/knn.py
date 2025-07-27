@@ -10,7 +10,7 @@ z = np.random.randn(d) # điểm dữ liệu đang cần xét đến
 
 #Tính bình hương khoảng cách giữa z và mỗi hàng của X
 def dis_pp(x, z):
-    d = z - x.reshape(z.shape, axis = 0)
+    d = z - x.reshape(z.shape)
     return np.sum(d*d)
 
 def dis_ps_naive(z, X):
