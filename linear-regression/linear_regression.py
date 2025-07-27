@@ -46,6 +46,6 @@ print('w', w)
 # dùng model của sklearn
 from sklearn import datasets, linear_model
 model = linear_model.LinearRegression(fit_intercept= False)
-model.fit(X,y)
+model.fit(X_bar,y)
 print('sklearn w', model.coef_)
 
