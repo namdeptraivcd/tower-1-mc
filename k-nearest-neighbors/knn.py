@@ -23,4 +23,17 @@ def dis_ps_naive(z, X):
 
 
 #Tính mỗi tích vô hướng giữa X[i].T và z, lưu bình phương của các euclid X[i]. 
-def_dis_fast(z, X):
+def dis_pp_fast(z, X):
+    X2 = np.sum(X*X, axis = 1)
+    z2 = np.sum(z*z, axis = 1)
+    res_2 = X2 + z2 - 2*np.dot(X.T, z) # có thể bỏ cả z2
+    return res_2 
+
+t1 = time()
+Distance1 = dis_ps_naive(z, X)
+print("Naive time: ", time() - t1)
+
+t2 = time()
+Distance2 = dis_pp_fast(z, X)
+print("Fast time: ", time() - t2)
+print("result_difference: ", np.linalg.norm(Distance1-Distance2))
