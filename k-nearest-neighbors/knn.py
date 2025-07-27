@@ -17,7 +17,7 @@ def dis_ps_naive(z, X):
     N = X.shape[0]
     res = np.zeros((1, N))
     for i in range (N):
-        res[0][i] = dis_pp[X[i], z]
+        res[0][i] = dis_pp(X[i], z)
     return res
 
 
