@@ -1,7 +1,10 @@
 from __future__ import division, print_function, unicode_literals
 import numpy as np
 import matplotlib.pyplot as plt 
-from src.model.linear_model import LinearRegression
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src')))
+from src.model.lr import LinearRegression
 
 from src.config.config import DEVICE
 
