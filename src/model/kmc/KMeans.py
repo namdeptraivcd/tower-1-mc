@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 class KMeans:
     def __init__(self, n_clusters=3, max_iters=100):
@@ -28,3 +29,13 @@ class KMeans:
     def predict(self, X):
         distances = self._compute_distances(X)
         return np.argmin(distances, axis=1)
+
+    def kmeans_display(self, X):
+        labels = self.predict(X)
+        plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', marker='o')
+        plt.scatter(self.centroids[:, 0], self.centroids[:, 1], c='red', marker='x', s=200, label='Centroids')
+        plt.title('KMeans Clustering')
+        plt.xlabel('Feature 1')
+        plt.ylabel('Feature 2')
+        plt.legend()
+        plt.show()
