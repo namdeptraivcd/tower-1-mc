@@ -23,7 +23,7 @@ def dis_ps_naive(z, X):
 
 
 #Tính mỗi tích vô hướng giữa X[i].T và z, lưu bình phương của các euclid X[i]. 
-def dis_pp_fast(z, X):
+def dis_ps_fast(z, X):
     X2 = np.sum(X*X, axis = 1)
     z2 = np.sum(z*z)
     res_2 = X2 + z2 - 2*np.dot(X, z) # có thể bỏ cả z2
@@ -31,9 +31,49 @@ def dis_pp_fast(z, X):
 
 t1 = time()
 Distance1 = dis_ps_naive(z, X)
-print("Naive time: ", time() - t1)
+print("Naive time point to set: ", time() - t1)
 
 t2 = time()
-Distance2 = dis_pp_fast(z, X)
-print("Fast time: ", time() - t2)
+Distance2 = dis_ps_fast(z, X)
+print("Fast time point to set: ", time() - t2)
 print("result_difference: ", np.linalg.norm(Distance1-Distance2))
+
+
+# tính khoảng cách của các Z tới ma trận X
+M = 100
+Z = np.random.randn(M, d)
+def dis_ss_naive(Z, X):
+    N = X.shape[0]
+    M = Z.shape[0]
+    res = np.zeros((M,N))
+    for i in range (M):
+        res[i] = dis_ps_naive(Z[i], X)
+    return res
+
+def dis_ss_fast(Z, X):
+    X2 = np.sum(X*X, axis = 1)
+    X2.reshape(1, -1)
+    Z2 = np.sum(Z*Z, axis = 1)
+    Z2.reshape(-1, 1)
+    return X2 + Z2 - 2*np.dot(Z, X.T) # có thể bỏ cả Z2
+
+t3 = time()
+dis_ss_naive(Z, X)
+print("Naive time set to set: ", time() - t3)
+
+
+t4 = time()
+dis_ss_fast(Z,X)
+print("Fast time set to set: ", time() - t4)
+print("Result_difference: ", np.linalg.norm(dis_ss_naive(Z, X) - dis_ss_fast(Z, X)))
+
+
+
+
+
+
+#Sử dụng model KNN
+from __future__ import print__function
+from sklearn import neighbors, datasets
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
