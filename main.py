@@ -11,7 +11,8 @@ plt.plot(X, y, 'ro')
 plt.axis([140, 190, 40, 80])
 plt.xlabel('Height (cm)')
 plt.ylabel('weight (kg)')
-plt.savefig('show_data.png')
+# plt.savefig('show_data.png')
+plt.show()
 
 
 # từ show_data ta thấy rằng linear_regression là một mô hình phù hợp với dữ liệu này
@@ -38,7 +39,8 @@ plt.plot(x_0, y_0)
 plt.axis([140, 190, 40, 80])
 plt.xlabel('Height (cm)')
 plt.ylabel('weight (kg)')
-plt.savefig('output.png')
+# plt.savefig('output.png')
+plt.show()
 
 # check hệ số thu được 
 print('w', w)
