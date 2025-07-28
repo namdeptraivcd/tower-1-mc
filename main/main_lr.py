@@ -1,8 +1,8 @@
 from __future__ import division, print_function, unicode_literals
 import numpy as np
 import matplotlib.pyplot as plt 
-from src.model import linear_model
 from src.model.linear_model import LinearRegression
+
 from src.config.config import DEVICE
 
 print(DEVICE)
