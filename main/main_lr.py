@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt 
 from src.model import linear_model
 from src.model.linear_model import LinearRegression
+from src.config.config import DEVICE
+
+print(DEVICE)
 
 X = np.array([[147, 150, 153, 158, 163, 165, 168, 170, 173, 175, 178, 180, 183]]).T
 y = np.array([[49, 50, 51,  54, 58, 59, 60, 62, 63, 64, 66, 67, 68]]).T
@@ -11,7 +14,8 @@ plt.plot(X, y, 'ro')
 plt.axis([140, 190, 40, 80])
 plt.xlabel('Height (cm)')
 plt.ylabel('weight (kg)')
-plt.savefig('show_data.png')
+# plt.savefig('show_data.png')
+plt.show()
 
 
 # từ show_data ta thấy rằng linear_regression là một mô hình phù hợp với dữ liệu này
@@ -38,7 +42,8 @@ plt.plot(x_0, y_0)
 plt.axis([140, 190, 40, 80])
 plt.xlabel('Height (cm)')
 plt.ylabel('weight (kg)')
-plt.savefig('output.png')
+# plt.savefig('output.png')
+plt.show()
 
 # check hệ số thu được 
 print('w', w)
