@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src')))
-from src.model.lr import LinearRegression
-
+from src.model.lr import linear_model 
 from src.config.config import DEVICE
 
 print(DEVICE)
@@ -52,7 +51,7 @@ plt.show()
 print('w', w)
 
 # dùng model của nam
-model = LinearRegression(fit_intercept= False)
+model = linear_model.LinearRegression(fit_intercept= False)
 model.fit(X_bar,y)
 print('my w', model.coef_)
 
