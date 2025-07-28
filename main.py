@@ -28,6 +28,7 @@ def kmeans_display(X, label):
     plt.axis('equal')
     plt.plot()
     plt.show()
+    plt.savefig('kmeans_display.png')
     
 kmeans_display(X, original_label)
 kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
