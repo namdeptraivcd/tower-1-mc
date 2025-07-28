@@ -70,3 +70,4 @@ print("Result_difference: ", np.linalg.norm(dis_ss_naive(Z, X) - dis_ss_fast(Z, 
 
 
 
+
