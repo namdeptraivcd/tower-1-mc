@@ -73,7 +73,6 @@ print("Result_difference: ", np.linalg.norm(dis_ss_naive(Z, X) - dis_ss_fast(Z, 
 
 
 #Sử dụng model KNN
-from __future__ import print__function
 from sklearn import neighbors, datasets
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
