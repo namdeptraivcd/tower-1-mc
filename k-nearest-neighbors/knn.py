@@ -52,10 +52,8 @@ def dis_ss_naive(Z, X):
 
 def dis_ss_fast(Z, X):
     X2 = np.sum(X*X, axis = 1)
-    X2.reshape(1, -1)
     Z2 = np.sum(Z*Z, axis = 1)
-    Z2.reshape(-1, 1)
-    return X2 + Z2 - 2*np.dot(Z, X.T) # có thể bỏ cả Z2
+    return X2.reshape(1, -1) + Z2.reshape(-1,1) - 2*np.dot(Z, X.T) # có thể bỏ cả Z2
 
 t3 = time()
 dis_ss_naive(Z, X)
