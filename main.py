@@ -1,9 +1,10 @@
 from __future__ import division, print_function, unicode_literals
 import numpy as np
 import matplotlib.pyplot as plt 
+from src.model import linear_model
+from src.model.linear_model import LinearRegression
 
 X = np.array([[147, 150, 153, 158, 163, 165, 168, 170, 173, 175, 178, 180, 183]]).T
-
 y = np.array([[49, 50, 51,  54, 58, 59, 60, 62, 63, 64, 66, 67, 68]]).T
 
 plt.plot(X, y, 'ro')
@@ -32,7 +33,6 @@ x_0 = np.linspace(140, 190, 2)
 y_0 = w_0 + w_1 * x_0
 
 # vẽ đường regression 
-
 plt.plot(X,y, 'ro')
 plt.plot(x_0, y_0)
 plt.axis([140, 190, 40, 80])
@@ -43,9 +43,8 @@ plt.savefig('output.png')
 # check hệ số thu được 
 print('w', w)
 
-# dùng model của sklearn
-from sklearn import datasets, linear_model
-model = linear_model.LinearRegression(fit_intercept= False)
+# dùng model của nam
+model = LinearRegression(fit_intercept= False)
 model.fit(X_bar,y)
-print('sklearn w', model.coef_)
+print('my w', model.coef_)
 
